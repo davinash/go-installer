@@ -1,30 +1,35 @@
 package pkg
 
 type InstallConfig struct {
-	Components []Components           `json:"Components"`
-	Services   []ServiceConfiguration `json:"Services"`
+	Components []Components `json:"Components"`
+	Services   []Services   `json:"Services"`
 }
-
+type Action struct {
+	Command string `json:"command"`
+}
 type Files struct {
-	Name             string `json:"Name"`
-	Platform         string `json:"Platform"`
-	Action           string `json:"Action"`
-	DecompressOutDir string `json:"DecompressOutDir"`
-	Command          string `json:"Command"`
+	Name      string `json:"Name"`
+	Platform  string `json:"Platform"`
+	Action    Action `json:"Action"`
+	InstallTo string `json:"InstallTo"`
 }
 type Components struct {
 	Name  string  `json:"Name"`
 	Files []Files `json:"Files"`
 }
-
-type ServiceConfiguration struct {
-	Name             string `json:"Name"`
-	Description      string `json:"Description"`
-	ShortDescription string `json:"ShortDescription"`
-	Command          string `json:"Command"`
-	Options          string `json:"Options"`
-	Component        string `json:"Component"`
-	InitScriptName   string `json:"InitScriptName"`
-	LdLibraryPath    string `json:"LdLibraryPath"`
-	DecompressOutDir string `json:"DecompressOutDir"`
+type Linux struct {
+	InitScriptName string `json:"InitScriptName"`
+}
+type Windows struct {
+	ServiceName string `json:"ServiceName"`
+}
+type Services struct {
+	Name             string  `json:"Name"`
+	Description      string  `json:"Description"`
+	ShortDescription string  `json:"ShortDescription"`
+	Command          string  `json:"Command"`
+	Options          string  `json:"Options"`
+	Component        string  `json:"Component"`
+	Linux            Linux   `json:"linux"`
+	Windows          Windows `json:"windows"`
 }

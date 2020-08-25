@@ -11,11 +11,6 @@ import (
 	"log"
 )
 
-var (
-	mode             = flag.String("mode", "", "Pass to mode for action [install|uninstall|status|start|stop]")
-	installDirectory = flag.String("install-dir", "", "Install directory")
-)
-
 func main() {
 	flag.Parse()
 
@@ -36,16 +31,9 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	binclude.IncludeFromFile("./package.txt")
+	binclude.IncludeFromFile("./file.list")
+	binclude.Include("./config.json")
 
-	switch *mode {
-	case "install":
-		pkg.PerformInstallation(config, BinFS)
-	case "uninstall":
-		pkg.PerformUnInstallation(config)
-	case "status":
-		pkg.PerformStatusCheck()
-	default:
-		log.Println("No mode provided")
-	}
+	pkg.PerformAction(config, BinFS)
+
 }
