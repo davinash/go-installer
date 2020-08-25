@@ -1,0 +1,140 @@
+{
+  "Components": [
+    {
+      "Name": "O365",
+      "Files": [
+        {
+          "Name": "libcrypto.so.1.0.0",
+          "Platform": "linux",
+          "Action": ""
+        },
+        {
+          "Name": "libcurl.so.3",
+          "Platform": "linux",
+          "Action": ""
+        },
+        {
+          "Name": "libidn.so.11",
+          "Platform": "linux",
+          "Action": ""
+        },
+        {
+          "Name": "librofsoca.so",
+          "Platform": "linux",
+          "Action": ""
+        },
+        {
+          "Name": "libsc_client.so",
+          "Platform": "linux",
+          "Action": ""
+        },
+        {
+          "Name": "libssl.so.1.0.0",
+          "Platform": "linux",
+          "Action": ""
+        },
+        {
+          "Name": "libz.so.1",
+          "Platform": "linux",
+          "Action": ""
+        },
+        {
+          "Name": "orbital-o365",
+          "Platform": "linux",
+          "Action": ""
+        },
+        {
+          "Name": "sc_client.properties",
+          "Platform": "",
+          "Action": ""
+        },
+        {
+          "Name": "dev-orbital.foglight.com.cer",
+          "Platform": "",
+          "Action": ""
+        },
+        {
+          "Name": "librofsoca.dll",
+          "Platform": "windows",
+          "Action": ""
+        },
+        {
+          "Name": "orbital-o365.exe",
+          "Platform": "windows",
+          "Action": ""
+        },
+        {
+          "Name": "rda_client.exe",
+          "Platform": "windows",
+          "Action": ""
+        },
+        {
+          "Name": "sc_client.dll",
+          "Platform": "windows",
+          "Action": ""
+        },
+        {
+          "Name": "sc_manager.exe",
+          "Platform": "windows",
+          "Action": ""
+        }
+      ]
+    },
+    {
+      "Name": "FileBeat",
+      "Files": [
+        {
+          "Name": "filebeat-oss-7.8.0-linux-x86_64.tar.gz",
+          "Platform": "linux",
+          "Action": "decompress",
+          "DecompressOutDir": "filebeat-7.8.0-linux-x86_64"
+        },
+        {
+          "Name": "filebeat-oss-7.8.0-windows-x86_64.zip",
+          "Platform": "windows",
+          "Action": "decompress",
+          "DecompressOutDir": "filebeat-7.8.0-windows-x86_64"
+        }
+      ]
+    },
+    {
+      "Name": "OrbitalAM",
+      "Files": [
+        {
+          "Name": "OrbitalAM-linux-x86_64.bin",
+          "Platform": "linux",
+          "Action": "execute",
+          "Command": "system"
+        },
+        {
+          "Name": "OrbitalAM-windows-x86_64.exe",
+          "Platform": "windows",
+          "Action": "execute",
+          "Command": "system"
+        }
+      ]
+    }
+  ],
+  "Services": [
+    {
+      "Name": "orbital-o365",
+      "Description": "Orbital Protector for Office 365",
+      "ShortDescription": "Orbital Protector for Office 365",
+      "Command": "orbital-o365",
+      "Options": "",
+      "Component": "O365",
+      "InitScriptName": "/etc/init.d/orbital-o365",
+      "DecompressOutDir": ""
+    },
+    {
+      "Name": "filebeat",
+      "Description": "Orbital Filebeat for Office 365",
+      "ShortDescription": "Orbital Filebeat for Office 365",
+      "Command": "filebeat",
+      "Options": "",
+      "Component": "FileBeat",
+      "InitScriptName": "/etc/init.d/filebeat",
+      "DecompressOutDir": "filebeat-7.8.0-linux-x86_64"
+    }
+  ]
+}
