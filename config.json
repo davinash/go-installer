@@ -66,21 +66,5 @@
         }
       ]
     }
-  ],
-  "Services": [
-    {
-      "Name": "MyService",
-      "Description": "Orbital Protector for Office 365",
-      "ShortDescription": "Orbital Protector for Office 365",
-      "Command": "$INSTALL_DIR/bin/MyExecutable",
-      "Options": "",
-      "Component": "O365",
-      "linux": {
-        "InitScriptName": "MyProduct"
-      },
-      "windows": {
-        "ServiceName": ""
-      }
-    }
   ]
 }
