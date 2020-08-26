@@ -1,0 +1,70 @@
+{
+  "Components": [
+    {
+      "Name": "MyProduct",
+      "TargetDir": "bin",
+      "Files": [
+        {
+          "Name": "file1.txt",
+          "Platform": "linux",
+          "Action": {
+            "command": ""
+          },
+          "SourceRelativePath": "./stage/file1.txt"
+        },
+        {
+          "Name": "file2.txt",
+          "Platform": "linux",
+          "Action": {
+            "command": ""
+          },
+          "SourceRelativePath": "./stage/file2.txt"
+        }
+      ]
+    },
+    {
+      "Name": "MyProductLib",
+      "TargetDir": "lib",
+      "Files": [
+        {
+          "Name": "file3.txt",
+          "Platform": "linux",
+          "Action": {
+            "command": ""
+          },
+          "SourceRelativePath": "./stage/file3.txt"
+        },
+        {
+          "Name": "file4.txt",
+          "Platform": "linux",
+          "Action": {
+            "command": ""
+          },
+          "SourceRelativePath": "./stage/file4.txt"
+        },
+        {
+          "Name": "file5.txt",
+          "Platform": "linux",
+          "Action": {
+            "command": ""
+          },
+          "SourceRelativePath": "./stage/file5.txt"
+        }
+      ]
+    },
+    {
+      "Name": "MyProductExtra",
+      "TargetDir": "extra",
+      "Files": [
+        {
+          "Name": "allfiles.tar",
+          "Platform": "linux",
+          "Action": {
+            "command": ""
+          },
+          "SourceRelativePath": "./stage/allfiles.tar"
+        }
+      ]
+    }
+  ]
+}
