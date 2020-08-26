@@ -13,7 +13,20 @@ This project is internally using [binclude](https://github.com/lu4p/binclude)
 * Create your own `config.json` See example below
 * Create your own `file.list` See example below
 * Build using command `make build`
+* Above command will product executable `out/installer`
 * Make sure you have `PATH` contains `$GOPATH/bin`
+
+## Example usage
+```bash
+$ out/installer --help
+Usage of out/installer:
+  -install-dir string
+    	Install directory
+  -mode string
+    	Pass to mode for action [install|uninstall|status|start|stop]
+
+$ ./out/installer -mode install -install-dir /home/adongre/1.0
+```
 
 ## Typical `config.json`
 ```json
