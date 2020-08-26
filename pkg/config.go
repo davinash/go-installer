@@ -8,14 +8,15 @@ type Action struct {
 	Command string `json:"command"`
 }
 type Files struct {
-	Name      string `json:"Name"`
-	Platform  string `json:"Platform"`
-	Action    Action `json:"Action"`
-	InstallTo string `json:"InstallTo"`
+	Name               string `json:"Name"`
+	Platform           string `json:"Platform"`
+	Action             Action `json:"Action"`
+	SourceRelativePath string `json:"SourceRelativePath"`
 }
 type Components struct {
-	Name  string  `json:"Name"`
-	Files []Files `json:"Files"`
+	Name      string  `json:"Name"`
+	TargetDir string  `json:"TargetDir"`
+	Files     []Files `json:"Files"`
 }
 type Linux struct {
 	InitScriptName string `json:"InitScriptName"`
